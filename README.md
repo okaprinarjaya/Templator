@@ -11,6 +11,7 @@
 
 ---
 
+
 # The Concept
 ### You are template designer
 
@@ -34,6 +35,8 @@
 
 ---
 
+
+
 ### You are developer
 As a developer you can control the layout easily looks like below:
 
@@ -45,6 +48,8 @@ $templator->widgets(array(
 
 #### Let see the big picture of the concept below
 
+If you do this
+
 ```php
 $templator->widgets(array(
     'header'    => array('widget_a'),
@@ -54,9 +59,14 @@ $templator->widgets(array(
 ));
 ```
 
+You get
+
 ![2](assets/2.png)
 
 ---
+
+
+If you do this
 
 ```php
 $templator->widgets(array(
@@ -66,9 +76,14 @@ $templator->widgets(array(
 ));
 ```
 
+You get
+
 ![3](assets/3.png)
 
 ---
+
+
+If you do this
 
 ```php
 $templator->widgets(array(
@@ -78,9 +93,13 @@ $templator->widgets(array(
 ));
 ```
 
+You get
+
 ![4](assets/4.png)
 
 ---
+
+
 
 ## Installation
 
