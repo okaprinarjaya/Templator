@@ -14,62 +14,73 @@
 # The Concept
 ### You are template designer
 
+```html   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ title }}</title>
+</head>
+<body>
+    {% block header %}{% endblock %}
+    {% block left %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block right %}{% endblock %}
+    {% block footer %}{% endblock %}
+</body>
+</html>
+```
+
 ![1](assets/1.png)
-   
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>{{ title }}</title>
-    </head>
-    <body>
-        {% block header %}{% endblock %}
-        {% block left %}{% endblock %}
-        {% block content %}{% endblock %}
-        {% block right %}{% endblock %}
-        {% block footer %}{% endblock %}
-    </body>
-    </html>
-    
+
 ---
 
 ### You are developer
 As a developer you can control the layout easily looks like below:
 
-    $templator->widgets(array(
-        'block' => array('widget')
-    ));
+```php
+$templator->widgets(array(
+    'block' => array('widget')
+));
+```
 
 #### Let see the big picture of the concept below
 
+```php
+$templator->widgets(array(
+    'header'    => array('widget_a'),
+    'left'      => array('widget_b'),
+    'right'     => array('widget_c'),
+    'footer'    => array('widget_d')
+));
+```
+
 ![2](assets/2.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'left'      => array('widget_b'),
-        'right'     => array('widget_c'),
-        'footer'    => array('widget_d')
-    ));
-
 ---
+
+```php
+$templator->widgets(array(
+    'header'    => array('widget_a'),
+    'right'     => array('widget_c'),
+    'footer'    => array('widget_d')
+));
+```
 
 ![3](assets/3.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'right'     => array('widget_c'),
-        'footer'    => array('widget_d')
-    ));
-
 ---
+
+```php
+$templator->widgets(array(
+    'header'    => array('widget_a'),
+    'right'     => array('widget_b', 'widget_c', 'widget_e', 'widget_f'),
+    'footer'    => array('widget_d')
+));
+```
 
 ![4](assets/4.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'right'     => array('widget_b', 'widget_c', 'widget_e', 'widget_f'),
-        'footer'    => array('widget_d')
-    ));
-
+---
 
 ## Installation
 
