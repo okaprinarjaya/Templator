@@ -105,11 +105,13 @@ You get
 
 Add the following into your `composer.json` file:
 
-    {
-        "require": {
-            "kristories/templator": "*"
-        }
+```json
+{
+    "require": {
+        "kristories/templator": "*"
     }
+}
+```
 
 Then run
 
@@ -120,25 +122,29 @@ Then run
 
 ### Basic
 
-    $templator = new \Templator\Templator();
+```php
+$templator = new \Templator\Templator();
 
-    // Set data
-    $templator->data('foo', 'bar');
+// Set data
+$templator->data('foo', 'bar');
 
-    // Render
-    echo $templator->render('base_template', 'page');
+// Render
+echo $templator->render('base_template', 'page');
+```
 
 ### Config
 
-    $templator = new \Templator\Templator(array(
-        'path'  => array(
-            'root'      => 'templates',
-            'base'      => 'base',
-            'pages'     => 'pages',
-            'widgets'   => 'widgets'
-        ),
-        'cache' => NULL
-    ));
+```php
+$templator = new \Templator\Templator(array(
+    'path'  => array(
+        'root'      => 'templates',
+        'base'      => 'base',
+        'pages'     => 'pages',
+        'widgets'   => 'widgets'
+    ),
+    'cache' => NULL
+));
+```
 
 Structure :
 
@@ -160,20 +166,26 @@ Structure :
 
 ### Data
 
-    $templator->data('foo', 'bar');
-    // or
-    $templator->data(array(
-        'foo' => 'bar',
-        'bar' => 'baz'
-    ));
+```php
+$templator->data('foo', 'bar');
+// or
+$templator->data(array(
+    'foo' => 'bar',
+    'bar' => 'baz'
+));
+```
 
-### Widgets
+### Arrange the blocks
 
-    $templator->widgets(array(
-        'header' => array('logo', 'mainmenu', 'search'),
-        'footer' => array('copyright, 'footermenu')
-    ));
+```php
+$templator->widgets(array(
+    'header' => array('logo', 'mainmenu', 'search'),
+    'footer' => array('copyright, 'footermenu')
+));
+```
 
+## More examples
+TL;DR
 
 ## Why Twig?
 
